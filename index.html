@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Life Performance Scan™</title>
+
+    <meta name="description"
+          content="Discover how much of your potential you are turning into results.">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div id="background">
+
+    <div class="gradient one"></div>
+    <div class="gradient two"></div>
+    <div class="gradient three"></div>
+
+</div>
+
+<div id="app">
+
+<!-- ================================================= -->
+<!-- LANDING PAGE -->
+<!-- ================================================= -->
+
+<section
+id="landingPage"
+class="page active">
+
+<div class="glass hero">
+
+<div class="hero-logo">
+
+Life Performance Scan™
+
+</div>
+
+<h1>
+
+Unlock Your True Potential
+
+</h1>
+
+<p class="hero-description">
+
+Your performance is not determined by how hard you work.
+
+It is determined by whether your body, mind and environment
+restore energy faster than they consume it.
+
+Life Performance Scan™ measures your current Life Performance
+across eight essential dimensions and identifies the areas
+that deserve your attention first.
+
+</p>
+
+<div class="hero-grid">
+
+<div class="hero-item">
+
+🎯
+
+<span>Purpose</span>
+
+</div>
+
+<div class="hero-item">
+
+⚡
+
+<span>Physical Energy</span>
+
+</div>
+
+<div class="hero-item">
+
+❤️
+
+<span>Emotional Energy</span>
+
+</div>
+
+<div class="hero-item">
+
+🧠
+
+<span>Mental Performance</span>
+
+</div>
+
+<div class="hero-item">
+
+🌿
+
+<span>Environment</span>
+
+</div>
+
+<div class="hero-item">
+
+💰
+
+<span>Finance</span>
+
+</div>
+
+<div class="hero-item">
+
+🤝
+
+<span>Relationships</span>
+
+</div>
+
+<div class="hero-item">
+
+🌍
+
+<span>Health & Life</span>
+
+</div>
+
+</div>
+
+<div class="hero-information">
+
+<div>
+
+<strong>30 Questions</strong>
+
+<p>Professionally designed assessment</p>
+
+</div>
+
+<div>
+
+<strong>5 Minutes</strong>
+
+<p>Quick and insightful</p>
+
+</div>
+
+<div>
+
+<strong>Personalized Report</strong>
+
+<p>Strengths & Improvement Areas</p>
+
+</div>
+
+</div>
+
+<button
+id="startAssessment"
+class="primaryButton">
+
+Start Assessment
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- BASIC INFORMATION -->
+<!-- ================================================= -->
+
+<section
+id="basicInfoPage"
+class="page">
+
+<div class="glass formCard">
+
+<div class="pageTitle">
+
+<h2>
+
+Basic Information
+
+</h2>
+
+<p>
+
+This information is used to personalize your report.
+
+Height and Weight DO NOT contribute to your score.
+
+</p>
+
+</div>
+
+<form
+id="basicInfoForm">
+
+<div class="inputGroup">
+
+<label>
+
+Name
+
+</label>
+
+<input
+
+type="text"
+
+id="name"
+
+placeholder="Enter your name"
+
+required>
+
+</div>
+
+<div class="inputGroup">
+
+<label>
+
+Age
+
+</label>
+
+<input
+
+type="number"
+
+id="age"
+
+placeholder="Enter your age"
+
+required>
+
+</div>
+
+<div class="inputGroup">
+
+<label>
+
+Gender
+
+</label>
+
+<select id="gender" required>
+
+<option value="">
+
+Select Gender
+
+</option>
+
+<option value="Male">
+
+Male
+
+</option>
+
+<option value="Female">
+
+Female
+
+</option>
+
+<option value="Other">
+
+Other
+
+</option>
+
+</select>
+
+</div>
+
+<div class="inputGroup">
+
+<label>
+
+Life Stage
+
+</label>
+
+<select id="lifeStage" required>
+
+<option value="">
+
+Select Life Stage
+
+</option>
+
+<option>
+
+Student
+
+</option>
+
+<option>
+
+Career Development
+
+</option>
+
+<option>
+
+Stable Career
+
+</option>
+
+<option>
+
+Career Transition
+
+</option>
+
+<option>
+
+Post Career
+
+</option>
+
+</select>
+
+</div>
+
+<div class="twoColumn">
+
+<div class="inputGroup">
+
+<label>
+
+Height (cm)
+
+</label>
+
+<input
+
+type="number"
+
+id="height"
+
+placeholder="170"
+
+required>
+
+</div>
+
+<div class="inputGroup">
+
+<label>
+
+Weight (kg)
+
+</label>
+
+<input
+
+type="number"
+
+id="weight"
+
+placeholder="65"
+
+required>
+
+</div>
+
+</div>
+
+<div class="buttonArea">
+
+<button
+
+type="button"
+
+id="beginAssessment"
+
+class="primaryButton">
+
+Continue
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- QUESTION PAGE -->
+<!-- ================================================= -->
+
+<section
+
+id="questionPage"
+
+class="page">
+
+<div class="glass questionCard">
+
+<div class="topBar">
+
+<div>
+
+<div
+id="categoryLabel"
+class="categoryLabel">
+
+PURPOSE
+
+</div>
+
+<h3
+id="questionCounter">
+
+Question 1 of 30
+
+</h3>
+
+</div>
+
+<div
+id="progressText">
+
+3%
+
+</div>
+
+</div>
+
+<div class="progressContainer">
+
+<div
+id="progressFill">
+
+</div>
+
+</div>
+
+<div
+id="questionContent">
+
+<h2
+id="questionTitle">
+
+Loading Question...
+
+</h2>
+
+<p
+id="questionDescription">
+
+Choose the answer that best represents your current situation.
+
+</p>
+
+</div>
+
+<div
+id="answerContainer">
+
+<!-- Generated by JavaScript -->
+
+</div>
+
+<div class="navigationButtons">
+
+<button
+
+id="previousQuestion"
+
+class="secondaryButton">
+
+← Previous
+
+</button>
+
+<button
+
+id="nextQuestion"
+
+class="primaryButton">
+
+Continue →
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================================================= -->
+<!-- LOADING PAGE -->
+<!-- ================================================= -->
+
+<section
+id="loadingPage"
+class="page">
+
+<div class="glass loadingCard">
+
+<div class="loadingLogo">
+
+Life Performance Scan™
+
+</div>
+
+<div class="loader">
+
+<div></div>
+<div></div>
+<div></div>
+
+</div>
+
+<h2>
+
+Analyzing Your Performance...
+
+</h2>
+
+<p id="loadingMessage">
+
+Calculating your Life Performance Score...
+
+</p>
+
+<div class="loadingSteps">
+
+<div class="loadingStep active">
+
+✓ Reading your answers
+
+</div>
+
+<div class="loadingStep">
+
+✓ Calculating category scores
+
+</div>
+
+<div class="loadingStep">
+
+✓ Detecting strengths
+
+</div>
+
+<div class="loadingStep">
+
+✓ Detecting energy leakages
+
+</div>
+
+<div class="loadingStep">
+
+✓ Creating personalized recommendations
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================================= -->
+<!-- RESULTS PAGE -->
+<!-- ================================================= -->
+
+<section
+id="resultsPage"
+class="page">
+
+<div class="resultsWrapper">
+
+<!-- ============================= -->
+<!-- SCORE -->
+<!-- ============================= -->
+
+<div class="glass scoreCard">
+
+<div class="resultBadge">
+
+YOUR RESULT
+
+</div>
+
+<h2>
+
+Life Performance Score
+
+</h2>
+
+<div class="scoreCircle">
+
+<span id="finalPercentage">
+
+0%
+
+</span>
+
+</div>
+
+<h1
+id="performanceStage">
+
+THRIVING
+
+</h1>
+
+<p
+id="performanceDescription">
+
+Loading...
+
+</p>
+
+<div class="overallScore">
+
+<span>
+
+Overall Score
+
+</span>
+
+<strong id="overallPoints">
+
+0 / 100
+
+</strong>
+
+</div>
+
+</div>
+
+<!-- ============================= -->
+<!-- RADAR CHART -->
+<!-- ============================= -->
+
+<div class="glass overviewCard">
+
+<h2>
+
+Performance Overview
+
+</h2>
+
+<canvas
+id="radarChart">
+
+</canvas>
+
+</div>
+
+<!-- ============================= -->
+<!-- CATEGORY SCORES -->
+<!-- ============================= -->
+
+<div class="glass categoryScoresCard">
+
+<h2>
+
+Category Scores
+
+</h2>
+
+<div id="categoryScores">
+
+<!-- Generated by JavaScript -->
+
+</div>
+
+</div>
+
+<!-- ============================= -->
+<!-- STRENGTHS -->
+<!-- ============================= -->
+
+<div class="glass strengthsCard">
+
+<h2>
+
+Your Greatest Strengths
+
+</h2>
+
+<div
+id="strengthContainer">
+
+</div>
+
+</div>
+
+<!-- ============================= -->
+<!-- IMPROVEMENT -->
+<!-- ============================= -->
+
+<div class="glass weaknessCard">
+
+<h2>
+
+Needs Attention
+
+</h2>
+
+<div
+id="weaknessContainer">
+
+</div>
+
+</div>
+
+<!-- ============================= -->
+<!-- ACTION PLAN -->
+<!-- ============================= -->
+
+<div class="glass actionPlanCard">
+
+<h2>
+
+Your Personalized Action Plan
+
+</h2>
+
+<ol
+id="recommendationContainer">
+
+</ol>
+
+</div>
+
+<!-- ============================= -->
+<!-- ABOUT YOUR SCORE -->
+<!-- ============================= -->
+
+<div class="glass explanationCard">
+
+<h2>
+
+Hiểu Về Điểm Số Của Bạn
+
+</h2>
+
+<p>
+
+Bạn vừa nhìn thấy bức tranh về Hiệu suất sống của mình.
+Điểm số này không nói lên bạn giỏi đến đâu. Nó chỉ phản ánh
+mức độ mà năng lực hiện tại của bạn đang được chuyển hóa
+thành kết quả và chất lượng cuộc sống.
+
+</p>
+
+<p>
+
+Đó là lý do có những người rất giỏi nhưng luôn cảm thấy quá tải.
+Và cũng có những người đạt được rất nhiều kết quả mà vẫn còn
+năng lượng cho sức khỏe, gia đình và những điều họ yêu thích.
+
+</p>
+
+<p>
+
+Sự khác biệt thường không nằm ở năng lực. Mà nằm ở cách họ
+đang vận hành năng lượng mỗi ngày.
+
+</p>
+
+<h3 class="explanationSubheading">
+
+Điều mà Life Performance Scan chưa thể trả lời...
+
+</h3>
+
+<p>
+
+Mỗi ngày, cơ thể và não bộ của chúng ta luôn vận hành theo
+hai cơ chế diễn ra đồng thời.
+
+</p>
+
+<div class="energyColumns">
+
+<div class="energyColumn">
+
+<h4>
+
+🔻 Tiêu hao năng lượng
+
+</h4>
+
+<ul>
+
+<li>Mỗi quyết định bạn đưa ra.</li>
+
+<li>Mỗi cuộc họp.</li>
+
+<li>Mỗi lần lo lắng.</li>
+
+<li>Mỗi áp lực.</li>
+
+<li>Mỗi mối quan hệ.</li>
+
+<li>Mỗi giờ làm việc.</li>
+
+</ul>
+
+<p>...đều đang tiêu hao năng lượng. Đó là điều không thể tránh khỏi.</p>
+
+</div>
+
+<div class="energyColumn">
+
+<h4>
+
+🔺 Nạp lại năng lượng
+
+</h4>
+
+<ul>
+
+<li>Giấc ngủ.</li>
+
+<li>Dinh dưỡng.</li>
+
+<li>Vận động.</li>
+
+<li>Cảm xúc tích cực.</li>
+
+<li>Ý nghĩa công việc.</li>
+
+<li>Những mối quan hệ tốt.</li>
+
+<li>Môi trường phù hợp.</li>
+
+</ul>
+
+<p>...đó là những điều giúp bạn phục hồi và tạo ra năng lượng mới.</p>
+
+</div>
+
+</div>
+
+<p>
+
+Hiệu suất sống không được quyết định bởi việc bạn tiêu hao bao nhiêu.
+Mà bởi một câu hỏi khác. Bạn đang nạp lại nhanh hơn... hay đang mất
+đi nhanh hơn?
+
+</p>
+
+<p>
+
+Đó mới là điều quyết định vì sao:
+
+</p>
+
+<ul>
+
+<li>Có người làm việc 12 tiếng nhưng vẫn đầy năng lượng.</li>
+
+<li>Có người chỉ làm 8 tiếng đã kiệt sức.</li>
+
+<li>Có người càng làm càng phát triển.</li>
+
+<li>Có người càng cố gắng lại càng cảm thấy đuối.</li>
+
+</ul>
+
+<p>
+
+Nhưng đây mới là điều thú vị nhất. Không có hai người nào thất
+thoát năng lượng giống nhau. Có người bị rò rỉ từ giấc ngủ. Có
+người từ sự cầu toàn. Có người từ những mối quan hệ. Có người
+từ áp lực tài chính. Có người từ việc luôn sống trong nỗi sợ
+bị tụt hậu.
+
+</p>
+
+<p>
+
+Có người lại đang có rất nhiều nguồn năng lượng mạnh nhưng
+chưa từng biết cách tận dụng chúng. Đó là lý do hai người có
+cùng Life Performance Score vẫn có thể cần hai lộ trình hoàn
+toàn khác nhau.
+
+</p>
+
+<p>
+
+Và đó cũng là giới hạn của Life Performance Scan. Life
+Performance Scan giúp bạn biết:
+
+</p>
+
+<ul class="checkList">
+
+<li>✔ Bạn đang ở đâu.</li>
+
+<li>✔ Hiệu suất sống hiện tại của bạn ra sao.</li>
+
+<li>✔ Những lĩnh vực nào đang cần được quan tâm.</li>
+
+</ul>
+
+<p>
+
+Nhưng bài Scan không thể cho biết:
+
+</p>
+
+<ul>
+
+<li>Điều gì đang thật sự làm thất thoát năng lượng của bạn.</li>
+
+<li>Đâu là những đòn bẩy có tác động lớn nhất với chính bạn.</li>
+
+<li>Nếu chỉ được thay đổi 3 điều trong 90 ngày tới, bạn nên
+bắt đầu từ đâu để tạo ra hiệu quả lớn nhất.</li>
+
+</ul>
+
+</div>
+
+<!-- ============================= -->
+<!-- CTA -->
+<!-- ============================= -->
+
+<div class="glass ctaCard">
+
+<h2>
+
+Sẵn Sàng Khám Phá Điều Thực Sự Đang Kìm Hãm Bạn?
+
+</h2>
+
+<p>
+
+Life Performance Scan™ cho bạn biết bạn đang ở đâu trên hành
+trình Hiệu suất sống. Điểm số phản ánh mức độ bạn đang chuyển
+hóa năng lực thành kết quả và chất lượng cuộc sống, nhưng chưa
+cho biết <strong>nguyên nhân</strong>.
+
+</p>
+
+<p>
+
+Mỗi người có những Energy Leakages và Energy Leverages khác
+nhau. Life Performance Diagnostic™ sẽ giúp xác định chính xác
+nơi năng lượng đang thất thoát, những đòn bẩy tạo ra thay đổi
+lớn nhất và xây dựng Life Performance Blueprint 90 ngày được
+cá nhân hóa.
+
+</p>
+
+<div class="ctaGrid">
+
+<div class="ctaItem">
+
+🔍
+
+<h3>
+
+Energy Leakages
+
+</h3>
+
+<p>
+
+Những nơi đang âm thầm lấy đi năng lượng, thời gian và hiệu
+suất của bạn mỗi ngày.
+
+</p>
+
+</div>
+
+<div class="ctaItem">
+
+⚡
+
+<h3>
+
+Energy Leverages
+
+</h3>
+
+<p>
+
+Những đòn bẩy có khả năng tạo ra nhiều kết quả hơn với ít nỗ
+lực hơn — nhưng được cá nhân hóa theo chính bạn.
+
+</p>
+
+</div>
+
+<div class="ctaItem">
+
+🗺️
+
+<h3>
+
+Life Performance Blueprint
+
+</h3>
+
+<p>
+
+Một lộ trình ưu tiên rõ ràng trong 90 ngày, giúp bạn biết
+chính xác điều gì nên thay đổi trước để tạo ra tác động lớn
+nhất.
+
+</p>
+
+</div>
+
+</div>
+
+<p>
+
+Hãy tưởng tượng... nếu hôm nay bạn biết chính xác điều gì đang
+khiến mình luôn cảm thấy bận nhưng chưa thật sự hiệu quả, điều
+gì đang âm thầm rút cạn năng lượng mỗi ngày, và chỉ cần thay
+đổi 3 điều đúng nhất với mình — bạn có thể làm việc thông minh
+hơn, tạo ra nhiều kết quả hơn và vẫn còn năng lượng cho cuộc
+sống. Bạn sẽ bắt đầu từ đâu?
+
+</p>
+
+<a
+href="#"
+id="learnMoreButton"
+class="primaryButton">
+
+👉 Khám Phá Life Performance Diagnostic™
+
+</a>
+
+</div>
+
+<!-- ============================= -->
+<!-- BUTTONS -->
+<!-- ============================= -->
+
+<div class="resultButtons">
+
+<button
+
+id="downloadReport"
+
+class="secondaryButton">
+
+Download PDF Report
+
+</button>
+
+<button
+
+id="restartAssessment"
+
+class="primaryButton">
+
+Take Assessment Again
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="questions.js"></script>
+
+<script src="recommendations.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
