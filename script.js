@@ -413,6 +413,8 @@ function calculateResults(){
 
         percentage,
 
+        totalScore,
+
         categoryPercentages
 
     );
@@ -507,6 +509,8 @@ function displayResults(
 
     overall,
 
+    totalScore,
+
     categoryScores
 
 ){
@@ -531,7 +535,7 @@ function displayResults(
 
     ).textContent=
 
-        overall+" / 100";
+        totalScore+" / 150";
 
     document.getElementById(
 
@@ -548,6 +552,20 @@ function displayResults(
     ).textContent=
 
         performance.description;
+
+    document.getElementById("scoreInsightText").textContent=
+
+        performance.description;
+
+    document.getElementById("scoreInsightScore").textContent=
+
+        overall+"%";
+
+    document.getElementById("scoreInsightStage").textContent=
+
+        performance.title.replace(/[^A-Za-zÀ-ÿ ]/g, "").trim();
+
+    renderStageExplanation(performance);
 
     buildCategoryScores(categoryScores);
 
@@ -607,16 +625,19 @@ function buildRadarChart(scores){
 
         },
 
-        options:{
+options:{
 
             responsive:true,
 
-            maintainAspectRatio:true,
+            maintainAspectRatio:false, // Tắt tỉ lệ mặc định để ưu tiên chiều cao CSS đã cài ở Bước 1
 
-            // CRITICAL FIX: Adds a safe zone inside the canvas boundaries 
-            // so long outer category text strings never get sliced off
             layout: {
-                padding: 40 
+                padding: {
+                    top: 15,
+                    bottom: 15,
+                    left: 55,  // Khoảng đệm hai bên vừa đủ để chữ không bị tràn viền
+                    right: 55
+                }
             },
 
             scales:{
@@ -635,7 +656,7 @@ function buildRadarChart(scores){
 
                         backdropColor:"transparent",
                         
-                        font: { size: 12 } // Size of grid numbers (0, 20, 40, etc.)
+                        font: { size: 11 } 
 
                     },
 
@@ -655,14 +676,13 @@ function buildRadarChart(scores){
 
                         color:"#ffffff",
 
-                        // CRITICAL FIX: Makes the outer words much larger & clearer
                         font:{ 
-                            size: 16,        // Increased from 12 to 16
-                            weight: 'bold',  // Bold text makes it easier to scan
+                            size: 13,        // 13px giúp chữ gọn gàng hơn, không bị kích vỡ khung
+                            weight: '600',   // Độ đậm vừa phải giúp dễ đọc
                             family: "'Inter', sans-serif"
                         },
                         
-                        padding: 15 // Adds buffer space between the web lines and the text
+                        padding: 10 // Thu hẹp khoảng cách giữa chữ và đỉnh mạng nhện để nhường chỗ cho vòng tròn
 
                     }
 
@@ -676,15 +696,74 @@ function buildRadarChart(scores){
 
             }
 
-        }
-
-    });
-
-}
+        }});}
 
 /* =====================================================
    CATEGORY BARS
 ===================================================== */
+
+function renderStageExplanation(performance){
+
+    const container = document.getElementById("stageDetailContent");
+
+    const explanations = {
+
+        survival: {
+            title: "Nếu bạn đang ở vùng Survival",
+            body: [
+                "Bạn có thể đang vận hành phần lớn thời gian trong chế độ sinh tồn. Năng lượng bị tiêu hao nhanh, khả năng phục hồi chưa đủ, và những việc cơ bản trong cuộc sống cũng có thể lấy đi rất nhiều sức.",
+                "Tiềm năng của bạn đang bị che bởi sự quá tải, thiếu phục hồi, thiếu hỗ trợ hoặc một nhịp sống chưa còn phù hợp.",
+                "Điều cần làm không phải là ép bản thân cố thêm. Điều cần làm là tìm ra điểm nào đang làm bạn rò rỉ năng lượng mạnh nhất, và sửa từ gốc rễ này."
+            ]
+        },
+
+        draining: {
+            title: "Nếu bạn đang ở vùng Draining",
+            body: [
+                "Bạn vẫn đang vận hành được. Nhưng cái giá phải trả khá cao. Có thể bạn vẫn hoàn thành công việc, chăm sóc gia đình và giữ trách nhiệm, nhưng bên trong bạn biết mình đang phải gồng.",
+                "Tiềm năng lớn nhất của bạn nằm ở việc giảm hao phí. Khi bớt rò rỉ năng lượng vào việc gấp, cảm xúc, môi trường nhiễu hoặc những kỳ vọng không rõ ràng, bạn có thể tạo ra kết quả tốt hơn mà không cần làm nhiều hơn.",
+                "Đồng thời, bạn cũng có thể tìm ra những đòn bẩy khiến bạn phục hồi và sạc pin tốt hơn."
+            ]
+        },
+
+        emerging: {
+            title: "Nếu bạn đang ở vùng Emerging",
+            body: [
+                "Bạn đã có nền tảng. Nhưng hiệu suất chưa ổn định. Có ngày bạn làm rất tốt, có ngày bạn bị kéo đi bởi việc vụn, cảm xúc, tin nhắn, lịch trình hoặc sự mệt mỏi.",
+                "Đây là vùng có nhiều tiềm năng mở khóa nhất. Bạn không cần thay đổi toàn bộ cuộc sống.",
+                "Bạn cần xác định đúng 2–3 điểm nghẽn đang làm hiệu suất lên xuống thất thường. Khi tìm được đúng cơ chế của mình, hiệu suất có thể tăng lên rất rõ mà không cần thêm áp lực."
+            ]
+        },
+
+        performing: {
+            title: "Nếu bạn đang ở vùng Performing",
+            body: [
+                "Bạn đang vận hành khá tốt. Bạn có khả năng tạo kết quả và có một số thói quen tốt. Nhưng vùng Performing cũng có một cái bẫy: vì bạn đang làm tốt, bạn dễ nghĩ rằng cách duy nhất để tốt hơn là làm nhiều hơn, nhận thêm trách nhiệm hoặc nâng tiêu chuẩn lên nữa.",
+                "Ở giai đoạn này, đòn bẩy không nằm ở nỗ lực nhiều hơn. Đòn bẩy nằm ở việc thiết kế hệ thống thông minh hơn để có thể tạo ra nhiều kết quả hơn nữa.",
+                "Để làm được điều này, bạn cần biết đâu là vùng tạo hiệu suất cao nhất của mình, đâu là hoạt động có giá trị cao nhất, đâu là điểm rò rỉ nhỏ nhưng lặp lại mỗi ngày, và điều gì giúp bạn duy trì phong độ mà không kiệt sức."
+            ]
+        },
+
+        thriving: {
+            title: "Nếu bạn đang ở vùng Thriving",
+            body: [
+                "Chúc mừng bạn, bạn đang nằm trong danh sách những người xuất sắc với tảng hiệu suất sống cao. Bạn có khả năng tạo kết quả, giữ năng lượng và duy trì chất lượng sống ở mức cao hơn mặt bằng chung. Đây là một lợi thế rất lớn khiến bạn đạt được nhiều kết quả trong cuộc sống, tiến gần với mục đích cuộc đời mà vẫn cảm thấy tích cực, cân bằng.",
+            ]
+        }
+
+    };
+
+    const explanation = explanations[performance.key] || explanations.emerging;
+
+    container.innerHTML = `
+
+        <h3>${explanation.title}</h3>
+
+        ${explanation.body.map(paragraph => `<p>${paragraph}</p>`).join("")}
+
+    `;
+
+}
 
 function buildCategoryScores(scores){
 
