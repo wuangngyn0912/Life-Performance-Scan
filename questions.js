@@ -15,15 +15,15 @@ const QUESTIONS = [
 
     answers: [
 
-        "Xử lý những việc đang chờ.",
+        "Lao ngay vào tin nhắn, email hoặc những việc đang chờ xử lý.",
 
-        "Làm việc dễ hoặc gấp trước.",
+        "Làm việc dễ nhất hoặc việc gấp nhất trước để có cảm giác đang tiến lên.",
 
-        "Làm việc người khác cần.",
+        "Nhìn qua các việc cần làm và lên kế hoạch nhanh, nhưng vẫn dễ bị cuốn theo phát sinh trong ngày.",
 
-        "Làm việc quan trọng nhất.",
+        "Xác định 1–3 việc quan trọng nhất trong ngày và bắt đầu bằng một việc có giá trị cao.",
 
-        "Làm việc quan trọng nhất vì nó giúp mình tiến gần mục tiêu dài hạn."
+        "Kết nối lại với mục tiêu lớn hơn, chọn việc có đòn bẩy nhất trong ngày và chủ động bảo vệ thời gian để làm việc đó."
 
     ]
 
@@ -34,21 +34,21 @@ const QUESTIONS = [
 
     category: "Mục tiêu",
 
-    question: "Nếu có thêm 2 giờ rảnh mỗi ngày trong một tháng, bạn sẽ:",
+    question: "Nếu mỗi ngày có thêm 2 giờ rảnh trong một tháng, bạn nhiều khả năng sẽ dùng thời gian đó để làm gì?",
 
     helper: "Chọn đáp án gần với bạn nhất.",
 
     answers: [
 
-        "Nghỉ ngơi hoặc giải trí.",
+        "Nghỉ ngơi, giải trí hoặc ngủ bù vì hiện tại đã quá mệt.",
 
-        "Xử lý việc tồn đọng.",
+        "Xử lý việc tồn đọng để bớt cảm giác bị dí.",
 
-        "Học thêm một điều mới.",
+        "Học thêm, đọc thêm hoặc thử một điều mới, nhưng chưa chắc gắn với một ưu tiên rõ ràng.",
 
-        "Làm dự án đang theo đuổi.",
+        "Đẩy tiến độ một mục tiêu hoặc dự án cụ thể đang cần kết quả trong hiện tại.",
 
-        "Làm điều quan trọng nhất để xây dựng cuộc sống mình thật sự mong muốn."
+        "Xây dựng một năng lực, hệ thống hoặc tài sản dài hạn giúp mình tạo nhiều kết quả hơn trong tương lai mà không phải gồng thêm."
 
     ]
 
