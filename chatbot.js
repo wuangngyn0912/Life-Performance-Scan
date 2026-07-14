@@ -50,7 +50,6 @@
     messagesEl.scrollTop = messagesEl.scrollHeight;
 
     try {
-      // Calls OUR backend, which holds the real API key.
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -59,7 +58,7 @@
       const data = await res.json();
       typingEl.remove();
 
-      const reply = data.reply || 'Sorry, something went wrong.';
+      const reply = data.reply || data.error || 'Sorry, something went wrong.';
       addMessage('bot', reply);
       messages.push({ role: 'assistant', content: reply });
     } catch (err) {
@@ -69,6 +68,8 @@
       sendBtn.disabled = false;
     }
   }
+
+  addMessage('bot', 'Hi! The chat bot is ready to help.');
 
   bubble.addEventListener('click', () => {
     panel.classList.toggle('chatbotOpen');
