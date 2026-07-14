@@ -6,10 +6,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { messages } = req.body;
+  const { messages, apiKey } = req.body || {};
+  const openAIKey = (apiKey || process.env.OPENAI_API_KEY || '').trim();
 
   if (!messages || !Array.isArray(messages)) {
     return res.status(400).json({ error: 'messages array is required' });
+  }
+
+  if (!openAIKey) {
+    return res.status(401).json({ error: 'OpenAI API key is missing. Paste it in the chat widget or set OPENAI_API_KEY on the server.' });
   }
 
   try {
@@ -17,9 +22,7 @@ export default async function handler(req, res) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Key is read from an environment variable set in your hosting
-        // dashboard (Vercel/Netlify/etc), NOT hardcoded here.
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+        'Authorization': `Bearer ${openAIKey}`
       },
       body: JSON.stringify({
         model: 'gpt-4o-mini',
@@ -38,7 +41,7 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       console.error('OpenAI error:', data);
-      return res.status(response.status).json({ error: 'OpenAI request failed' });
+      return res.status(response.status).json({ error: data.error?.message || 'OpenAI request failed' });
     }
 
     const reply = data.choices?.[0]?.message?.content || 'Sorry, I had trouble responding.';
