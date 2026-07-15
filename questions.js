@@ -9,7 +9,7 @@ const QUESTIONS = [
 
     category: "Mục tiêu",
 
-    question: "Khi bắt đầu một ngày mới, việc đầu tiên bạn thường làm là:",
+    question: "Khi bắt đầu một ngày mới, việc đầu tiên bạn thường làm là gì?",
 
     helper: "Chọn đáp án mô tả đúng bạn nhất.",
 
@@ -59,21 +59,21 @@ const QUESTIONS = [
 
     category: "Mục tiêu",
 
-    question: "Khi gặp khó khăn, áp lực hoặc liên tiếp thất bại, điều nào mô tả đúng bạn nhất?",
+    question: "Khi gặp khó khăn, áp lực hoặc một kế hoạch quan trọng không đi như mong muốn, phản ứng thường gặp của bạn là gì?",
 
     helper: "Hãy chọn đáp án phản ánh đúng bản thân bạn trong phần lớn thời gian.",
 
     answers: [
 
-        "Tôi rất dễ bỏ cuộc hoặc mất động lực.",
+        "Dễ mất động lực, tự nghi ngờ bản thân hoặc muốn buông.",
 
-        "Tôi vẫn cố gắng nhưng thường chỉ vì trách nhiệm hoặc áp lực từ bên ngoài.",
+        "Vẫn tiếp tục, nhưng chủ yếu vì trách nhiệm, áp lực hoặc vì không còn lựa chọn khác.",
 
-        "Tôi cố gắng tiếp tục nhờ kỷ luật của bản thân, dù đôi khi cũng hoài nghi.",
+        "Cần một khoảng thời gian để ổn định lại, sau đó cố gắng quay lại với việc cần làm.",
 
-        "Tôi là người đã đặt mục tiêu thì sẽ cố gắng theo đuổi đến cùng và hoàn thành nó, dù đôi khi hành trình đó cũng khá áp lực.",
+        "Bình tĩnh nhìn lại vấn đề, điều chỉnh cách làm và tiếp tục theo đuổi mục tiêu.",
 
-        "Tôi đang theo đuổi một mục tiêu đủ lớn và ý nghĩa, nên mỗi ngày thức dậy tôi đều biết mình đang xây dựng con người và cuộc sống mà mình thật sự mong muốn."
+        "Rút ra bài học, điều chỉnh hệ thống hành động và dùng thất bại đó để làm rõ hơn con đường mình đang xây dựng."
 
     ]
 
@@ -84,21 +84,21 @@ const QUESTIONS = [
 
     category: "Mục tiêu",
 
-    question: "Trong tháng vừa rồi, bạn có bao nhiêu ngày cảm thấy: 'Tôi biết rất rõ điều quan trọng nhất mình cần tập trung'?",
+    question: "Trong 30 ngày gần đây, bạn có cảm giác \"Tôi biết rõ điều quan trọng nhất mình cần tập trung\" thường xuyên đến mức nào?",
 
     helper: "Đánh giá dựa trên 30 ngày gần đây.",
 
     answers: [
 
-        "Gần như không có.",
+        "Gần như không có. Tôi thường bị cuốn theo việc phát sinh.",
 
-        "Thỉnh thoảng.",
+        "Thỉnh thoảng có, nhưng biết là một chuyện, làm được lại là chuyện khác.",
 
-        "Khoảng một nửa.",
+        "Khoảng một nửa thời gian. Có ngày rõ, có ngày khá loay hoay.",
 
-        "Phần lớn thời gian.",
+        "Phần lớn thời gian. Tôi thường biết việc nào cần ưu tiên trước.",
 
-        "Gần như mỗi ngày."
+        "Gần như mỗi ngày. Ưu tiên ngày, tuần và mục tiêu dài hạn của tôi khá ăn khớp với nhau."
 
     ]
 
@@ -113,21 +113,21 @@ const QUESTIONS = [
 
     category: "Năng lượng thể chất",
 
-    question: "3 giờ chiều, không uống cà phê hay nạp thêm đường, bạn thường:",
+    question: "Khoảng 3 giờ chiều, trạng thái năng lượng thường gặp của bạn là gì?",
 
     helper: "Đánh giá mức năng lượng tự nhiên của bạn.",
 
     answers: [
 
-        "Muốn nằm nghỉ.",
+        "Tụt năng lượng rõ rệt, rất buồn ngủ hoặc gần như chỉ muốn nằm nghỉ.",
 
-        "Lờ đờ.",
+        "Lờ đờ, dễ đói, thèm đồ ngọt/cà phê/trà sữa hoặc cần nạp gì đó mới kéo tiếp được.",
 
-        "Bình thường.",
+        "Năng lượng giảm nhưng vẫn xử lý được các việc quen thuộc, ít đòi hỏi tập trung sâu.",
 
-        "Vẫn tỉnh táo.",
+        "Năng lượng tương đối ổn, vẫn làm việc được mà không cần dựa nhiều vào đồ uống kích thích hay ăn vặt.",
 
-        "Đủ năng lượng để tiếp tục."
+        "Năng lượng ổn định, đầu óc còn đủ tỉnh để xử lý một việc quan trọng hoặc một phiên tập trung sâu."
 
     ]
 
@@ -138,21 +138,21 @@ const QUESTIONS = [
 
     category: "Năng lượng thể chất",
 
-    question: "Sau một ngày làm việc bình thường, bạn thường:",
+    question: "Sau một ngày làm việc bình thường, buổi tối bạn thường ở trạng thái nào?",
 
     helper: "",
 
     answers: [
 
-        "Kiệt sức.",
+        "Kiệt sức, gần như không còn sức cho việc cá nhân.",
 
-        "Chỉ muốn nằm.",
+        "Chỉ muốn nằm, lướt điện thoại hoặc nghỉ thụ động.",
 
-        "Vẫn làm được việc nhà.",
+        "Vẫn làm được vài việc nhà/cá nhân cơ bản nhưng không còn nhiều hứng thú.",
 
-        "Còn sức cho gia đình hoặc sở thích.",
+        "Còn đủ sức để hiện diện với gia đình, vận động nhẹ hoặc làm điều mình thích.",
 
-        "Vẫn còn nhiều năng lượng."
+        "Năng lượng còn tương đối ổn, có thể tận hưởng buổi tối mà không cảm thấy đang \"gồng\"."
 
     ]
 
@@ -163,21 +163,21 @@ const QUESTIONS = [
 
     category: "Năng lượng thể chất",
 
-    question: "Khi thức dậy buổi sáng:",
+    question: "Khi thức dậy buổi sáng, cơ thể bạn thường phản ứng thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Mệt.",
+        "Mệt rõ rệt, cảm giác như chưa được phục hồi.",
 
-        "Muốn ngủ thêm.",
+        "Cần ngủ thêm hoặc mất khá lâu mới tỉnh.",
 
-        "Bình thường.",
+        "Bình thường, sau một lúc hoặc sau cà phê mới bắt nhịp được.",
 
-        "Khá tỉnh táo.",
+        "Khá tỉnh táo sau một thời gian chuyển tiếp ngắn.",
 
-        "Sẵn sàng bắt đầu ngày mới."
+        "Cơ thể sẵn sàng bắt đầu ngày mới trong vòng 15–30 phút đầu."
 
     ]
 
@@ -188,21 +188,21 @@ const QUESTIONS = [
 
     category: "Năng lượng thể chất",
 
-    question: "Nếu cuối tuần không có kế hoạch gì, cơ thể bạn thường:",
+    question: "Trong 30 ngày gần đây, bạn lắng nghe tín hiệu cơ thể của mình như thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Ngủ bù gần hết.",
+        "Tôi thường bỏ qua các dấu hiệu mệt, đau, căng hoặc xuống sức.",
 
-        "Nghỉ rất nhiều mới hồi.",
+        "Tôi nhận ra cơ thể đang không ổn nhưng thường trì hoãn việc chăm sóc.",
 
-        "Nghỉ vừa đủ.",
+        "Tôi có ngày chăm sóc tốt, có ngày buông khá nhiều.",
 
-        "Chủ động vận động.",
+        "Tôi biết vài thói quen giúp mình khỏe hơn và duy trì được phần lớn thời gian.",
 
-        "Tràn đầy năng lượng."
+        "Tôi chủ động quản trị giấc ngủ, vận động, dinh dưỡng và phục hồi như một phần của hiệu suất sống."
 
     ]
 
@@ -213,21 +213,21 @@ const QUESTIONS = [
 
     category: "Năng lượng thể chất",
 
-    question: "Bạn vừa leo liên tục 4 tầng cầu thang:",
+    question: "Khi phải leo liên tục 4 tầng cầu thang hoặc vận động gắng sức vừa phải, bạn thường thấy thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Rất mệt.",
+        "Tôi thường né những hoạt động như vậy vì biết mình sẽ rất mệt.",
 
-        "Thở gấp trên 30 giây.",
+        "Tôi làm được nhưng thở gấp, mệt rõ và hồi phục chậm.",
 
-        "Hồi lại trong khoảng 15 giây.",
+        "Tôi làm được, cần vài phút để cơ thể trở lại bình thường.",
 
-        "Chỉ hơi tăng nhịp thở.",
+        "Tôi hơi tăng nhịp thở nhưng hồi phục khá nhanh.",
 
-        "Hầu như không ảnh hưởng."
+        "Cơ thể phản ứng tốt, hồi phục nhanh và cho tôi cảm giác mình có nền thể lực ổn."
 
     ]
 
@@ -238,21 +238,21 @@ const QUESTIONS = [
 
     category: "Năng lượng thể chất",
 
-    question: "Bạn vô tình nhìn thấy mình trong gương:",
+    question: "Khi vô tình nhìn thấy mình trong gương, phản ứng thường gặp của bạn là gì?",
 
     helper: "Hãy chọn cảm nhận đầu tiên xuất hiện.",
 
     answers: [
 
-        "Tôi tránh soi gương để không phải nhìn thấy mình.",
+        "Tôi thường né tránh nhìn kỹ hoặc không muốn đối diện với tình trạng cơ thể hiện tại.",
 
-        "Thất vọng.",
+        "Tôi dễ chú ý vào những điểm chưa hài lòng và cảm thấy mất tự tin hoặc nản.",
 
-        "Bình thường.",
+        "Tôi thấy bình thường, chưa quá hài lòng nhưng cũng chưa có động lực rõ để thay đổi.",
 
-        "Khá hài lòng.",
+        "Tôi ghi nhận được một số điểm tích cực và biết mình cần cải thiện điều gì để khỏe, đẹp và tự tin hơn.",
 
-        "Tự hào."
+        "Tôi có cảm giác kết nối và tôn trọng cơ thể mình; việc chăm sóc cơ thể là một phần tự nhiên trong cách tôi giữ năng lượng và chất lượng sống."
 
     ]
 
@@ -266,7 +266,7 @@ const QUESTIONS = [
 
     category: "Năng lượng cảm xúc",
 
-    question: "Khi nhận được một lời góp ý khá thẳng, phản ứng thường gặp của bạn là:",
+    question: "Khi nhận một lời góp ý khá thẳng, phản ứng thường gặp của bạn là gì?",
 
     helper: "Hãy chọn phản ứng xảy ra thường xuyên nhất.",
 
@@ -274,13 +274,13 @@ const QUESTIONS = [
 
         "Nghĩ về nó rất lâu và dễ tự trách bản thân.",
 
-        "Khó chịu hoặc mất tinh thần trong một khoảng thời gian.",
+        "Khó chịu, phòng thủ hoặc mất tinh thần trong một khoảng thời gian.",
 
-        "Bình tĩnh nhìn nhận nhưng vẫn bị ảnh hưởng.",
+        "Vẫn lắng nghe được, nhưng cảm xúc bị ảnh hưởng khá rõ.",
 
-        "Chọn lọc điều hữu ích và nhanh chóng bước tiếp.",
+        "Tách được phần hữu ích khỏi cách người khác nói và biết mình cần điều chỉnh gì.",
 
-        "Xem đó là cơ hội để học hỏi và hoàn thiện bản thân."
+        "Chủ động hỏi thêm để hiểu đúng, rút ra bài học và vẫn giữ được sự tôn trọng với bản thân."
 
     ]
 
@@ -291,21 +291,21 @@ const QUESTIONS = [
 
     category: "Năng lượng cảm xúc",
 
-    question: "Một kế hoạch quan trọng thất bại, bạn mất bao lâu để lấy lại tinh thần?",
+    question: "Khi một kế hoạch quan trọng thất bại, bạn thường mất bao lâu để lấy lại tinh thần?",
 
     helper: "",
 
     answers: [
 
-        "Hơn 1 tuần.",
+        "Hơn một tuần, đôi khi còn kéo dài lâu hơn.",
 
-        "Vài ngày.",
+        "Vài ngày, và sự tự tin của tôi bị ảnh hưởng đáng kể.",
 
-        "Khoảng 1 ngày.",
+        "Khoảng một ngày để ổn định lại cảm xúc.",
 
-        "Vài giờ.",
+        "Vài giờ, sau đó tôi có thể nghĩ đến bước tiếp theo.",
 
-        "Gần như ngay lập tức."
+        "Tôi cho phép mình xử lý cảm xúc, rút kinh nghiệm và điều chỉnh hướng đi khá nhanh."
 
     ]
 
@@ -316,7 +316,7 @@ const QUESTIONS = [
 
     category: "Năng lượng cảm xúc",
 
-    question: "Trong 30 ngày gần đây, trạng thái cảm xúc xuất hiện nhiều nhất ở bạn là:",
+    question: "Trong 30 ngày gần đây, trạng thái cảm xúc xuất hiện nhiều nhất ở bạn là gì?",
 
     helper: "",
 
@@ -324,13 +324,13 @@ const QUESTIONS = [
 
         "Lo lắng, căng thẳng hoặc bất an.",
 
-        "Áp lực, dễ mệt, dễ cáu và khó thư giãn.",
+        "Áp lực, dễ mệt, dễ cáu và khó thật sự thư giãn.",
 
-        "Không thấy vui, đôi khi cảm thấy chán hoặc trống rỗng; vẫn hoàn thành mọi việc nhưng không thật sự thấy có ý nghĩa.",
+        "Không thấy vui, đôi khi chán hoặc trống rỗng; vẫn hoàn thành mọi việc cho xong nghĩa vụ nhưng không thấy nhiều ý nghĩa.",
 
-        "Ổn định và cân bằng; dù có áp lực nhưng vẫn thấy bình tĩnh và làm chủ nhịp sống của mình.",
+        "Tương đối ổn định; không phải lúc nào cũng hứng khởi nhưng nhìn chung vẫn bình tĩnh, có kết nối và làm chủ nhịp sống.",
 
-        "Hứng khởi, tràn đầy năng lượng và chủ động tiến về những điều mình muốn xây dựng."
+        "Có cảm giác sống động, rõ hướng và có động lực; đồng thời vẫn có khả năng nghỉ ngơi mà không thấy tội lỗi."
 
     ]
 
@@ -341,21 +341,21 @@ const QUESTIONS = [
 
     category: "Năng lượng cảm xúc",
 
-    question: "Buổi tối trước khi ngủ, đầu bạn thường:",
+    question: "Buổi tối trước khi ngủ, đầu óc bạn thường ở trạng thái nào?",
 
     helper: "",
 
     answers: [
 
-        "Không ngừng suy nghĩ, rất khó tắt não.",
+        "Không ngừng suy nghĩ, rất khó \"tắt não\".",
 
-        "Lo cho ngày mai.",
+        "Lo cho ngày mai hoặc tua lại những chuyện đã xảy ra.",
 
-        "Nghĩ linh tinh.",
+        "Nghĩ linh tinh, lướt điện thoại hoặc để bản thân mệt tự ngủ.",
 
-        "Khá bình yên.",
+        "Có thể thư giãn nếu có đủ thời gian chuyển tiếp.",
 
-        "Thư giãn, dễ ngủ."
+        "Có nhịp wind-down khá ổn định, giúp tâm trí và cơ thể biết đã đến lúc nghỉ."
 
     ]
 
@@ -370,21 +370,21 @@ const QUESTIONS = [
 
     category: "Hiệu suất tư duy",
 
-    question: "Bạn đang làm việc quan trọng, điện thoại báo tin:",
+    question: "Khi đang làm một việc quan trọng mà điện thoại báo tin nhắn, bạn thường làm gì?",
 
     helper: "",
 
     answers: [
 
-        "Xem ngay.",
+        "Xem ngay gần như theo phản xạ.",
 
-        "Xem sau vài phút.",
+        "Cố nhịn nhưng thường kiểm tra sau vài phút.",
 
-        "Làm xong việc rồi mới xem.",
+        "Làm nốt một đoạn rồi xem, nhưng sự tập trung đã bị ảnh hưởng.",
 
-        "Tắt thông báo.",
+        "Tắt hoặc để xa thông báo trong các phiên cần tập trung.",
 
-        "Hầu như không bị ảnh hưởng."
+        "Có hệ thống làm việc sâu: chặn xao nhãng, xử lý tin nhắn theo khung giờ và bảo vệ năng lượng nhận thức."
 
     ]
 
@@ -395,21 +395,21 @@ const QUESTIONS = [
 
     category: "Hiệu suất tư duy",
 
-    question: "Một vấn đề mới xuất hiện:",
+    question: "Khi một vấn đề mới, phức tạp xuất hiện, phản ứng đầu tiên của bạn thường là gì?",
 
     helper: "",
 
     answers: [
 
-        "Hoảng.",
+        "Hoảng hoặc thấy quá tải.",
 
-        "Trì hoãn.",
+        "Trì hoãn vì chưa biết bắt đầu từ đâu.",
 
-        "Google ngay để tìm câu trả lời.",
+        "Tìm thông tin, hỏi người khác hoặc Google trước khi thật sự định nghĩa vấn đề.",
 
-        "Bình tĩnh phân tích.",
+        "Bình tĩnh xác định vấn đề, dữ kiện cần có và bước xử lý tiếp theo.",
 
-        "Hứng thú tìm lời giải."
+        "Làm rõ ràng buộc, tạo vài phương án, thử nhanh và điều chỉnh dựa trên dữ liệu thực tế."
 
     ]
 
@@ -420,21 +420,21 @@ const QUESTIONS = [
 
     category: "Hiệu suất tư duy",
 
-    question: "Một ngày bạn có bao nhiêu khoảng tập trung sâu trên 60 phút?",
+    question: "Trong một tuần làm việc bình thường, bạn có bao nhiêu phiên tập trung sâu trên 60 phút?",
 
     helper: "",
 
     answers: [
 
-        "Không có.",
+        "Gần như không có.",
 
-        "Một.",
+        "Có nhưng hiếm, thường là tình cờ khi không bị ai làm phiền.",
 
-        "Hai.",
+        "Có khoảng 1–2 phiên nếu tuần đó thuận lợi.",
 
-        "Ba.",
+        "Có vài phiên được chủ động sắp xếp cho việc quan trọng.",
 
-        "Hơn ba."
+        "Tôi bảo vệ đều đặn các phiên tập trung sâu cho những việc có giá trị cao nhất."
 
     ]
 
@@ -445,21 +445,21 @@ const QUESTIONS = [
 
     category: "Hiệu suất tư duy",
 
-    question: "Cuối ngày bạn thường:",
+    question: "Cuối ngày làm việc, cảm giác thường gặp của bạn là gì?",
 
     helper: "",
 
     answers: [
 
-        "Rất bận nhưng không biết mình đã tạo ra điều gì.",
+        "Rất bận nhưng không rõ mình đã tạo ra kết quả gì đáng kể.",
 
-        "Làm rất nhiều nhưng việc quan trọng vẫn còn.",
+        "Làm nhiều việc, nhưng việc quan trọng nhất vẫn còn dang dở.",
 
-        "Hoàn thành phần lớn kế hoạch.",
+        "Hoàn thành khá nhiều việc trong kế hoạch nhưng năng lượng giảm rõ.",
 
-        "Hoàn thành việc quan trọng nhưng kiệt sức.",
+        "Hoàn thành được 1–3 việc quan trọng và vẫn còn năng lượng ở mức chấp nhận được.",
 
-        "Hoàn thành việc quan trọng và vẫn còn nhiều năng lượng."
+        "Tạo ra kết quả có ý nghĩa, biết rõ bước tiếp theo và kết thúc ngày mà không bị cạn kiệt."
 
     ]
 
@@ -474,21 +474,21 @@ const QUESTIONS = [
 
     category: "Môi trường",
 
-    question: "Khi bạn muốn xây dựng một thói quen hoặc thay đổi tích cực, người xung quanh thường:",
+    question: "Khi bạn muốn xây dựng một thói quen tốt hoặc thay đổi tích cực, môi trường xung quanh thường tác động thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Cản trở.",
+        "Thường kéo tôi ngược lại hoặc khiến việc thay đổi khó hơn.",
 
-        "Không ủng hộ.",
+        "Không phản đối trực tiếp nhưng cũng không hỗ trợ.",
 
-        "Trung lập.",
+        "Trung lập, tôi phải tự dựa vào ý chí là chính.",
 
-        "Khuyến khích.",
+        "Có một số người hoặc điều kiện giúp tôi duy trì thay đổi.",
 
-        "Chủ động đồng hành."
+        "Tôi có môi trường, người đồng hành hoặc cơ chế nhắc nhở khiến hành vi tốt trở nên dễ thực hiện hơn."
 
     ]
 
@@ -499,21 +499,21 @@ const QUESTIONS = [
 
     category: "Môi trường",
 
-    question: "Nếu gặp một vấn đề lớn lúc 2 giờ sáng, bạn có thể gọi cho bao nhiêu người?",
+    question: "Nếu gặp một vấn đề lớn vào lúc rất khó khăn, ví dụ giữa đêm hoặc khi tinh thần xuống thấp, bạn có ai để tìm đến không?",
 
     helper: "",
 
     answers: [
 
-        "Không có ai.",
+        "Gần như không có ai.",
 
-        "Một người.",
+        "Có một người, nhưng tôi thường ngại làm phiền hoặc không chắc họ giúp được.",
 
-        "2–3 người.",
+        "Có 1–2 người có thể lắng nghe, nhưng hỗ trợ còn khá giới hạn.",
 
-        "Vài người.",
+        "Có vài người đáng tin cho hỗ trợ cảm xúc hoặc thực tế.",
 
-        "Rất nhiều người."
+        "Tôi có mạng lưới hỗ trợ rõ ràng và biết nên tìm ai cho từng loại vấn đề."
 
     ]
 
@@ -527,21 +527,21 @@ const QUESTIONS = [
 
     category: "Môi trường",
 
-    question: "Không gian làm việc khiến bạn:",
+    question: "Không gian làm việc/sống hiện tại ảnh hưởng đến khả năng tập trung và phục hồi của bạn như thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Rất dễ mất tập trung.",
+        "Rất nhiều thứ gây nhiễu, bừa bộn hoặc khiến tôi dễ mất tập trung và nhanh mệt.",
 
-        "Khó tập trung.",
+        "Tôi vẫn xoay xở được, nhưng không gian hiện tại thường làm tôi tốn thêm năng lượng để bắt đầu hoặc duy trì tập trung.",
 
-        "Tạm ổn.",
+        "Tạm ổn cho sinh hoạt/làm việc cơ bản, nhưng chưa thật sự hỗ trợ tôi làm việc sâu hoặc nghỉ ngơi chất lượng.",
 
-        "Khá hiệu quả.",
+        "Khá gọn gàng, ít nhiễu và có một số khu vực/thói quen giúp tôi dễ tập trung hơn.",
 
-        "Muốn ngồi vào là làm."
+        "Được sắp xếp có chủ đích: nơi làm việc, nghỉ ngơi và sinh hoạt tương đối rõ ràng, giúp tôi dễ vào việc, dễ hồi phục và ít bị kéo năng lượng."
 
     ]
 
@@ -552,21 +552,21 @@ const QUESTIONS = [
 
     category: "Môi trường",
 
-    question: "Nhìn lại 12 tháng qua, môi trường sống/làm việc:",
+    question: "Nhìn lại 12 tháng qua, môi trường vận hành của bạn — gồm lịch trình, văn hóa làm việc, kỳ vọng từ người xung quanh, mức độ nhiễu và hệ thống hỗ trợ — đang tác động đến bạn như thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Kéo mình xuống.",
+        "Kéo tôi xuống rõ rệt; tôi thường bị cuốn vào nhịp sống/làm việc khiến mình mệt và mất phương hướng.",
 
-        "Làm mình mệt.",
+        "Giúp tôi duy trì được trách nhiệm cơ bản, nhưng thường làm tôi hao năng lượng nhiều hơn mức cần thiết.",
 
-        "Không thay đổi nhiều.",
+        "Tốt xấu lẫn lộn; có lúc hỗ trợ tôi, có lúc lại khiến tôi bị phân tán hoặc quá tải.",
 
-        "Giúp mình phát triển.",
+        "Có nhiều yếu tố hỗ trợ tôi phát triển hơn trước, dù vẫn còn một số điểm gây rò rỉ năng lượng.",
 
-        "Giúp mình thành phiên bản tốt hơn."
+        "Tôi đã chủ động thiết kế lại lịch trình, ranh giới, cách làm việc hoặc các nguồn hỗ trợ để môi trường giúp mình vận hành tốt hơn."
 
     ]
 
@@ -581,21 +581,21 @@ const QUESTIONS = [
 
     category: "Tài chính",
 
-    question: "Nếu thu nhập giữ nguyên trong 3 năm tới:",
+    question: "Nếu thu nhập của bạn giữ nguyên trong 3 năm tới, bạn cảm thấy thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Rất lo.",
+        "Rất lo vì nền tảng hiện tại không đủ an toàn.",
 
-        "Thất vọng.",
+        "Thất vọng hoặc mắc kẹt vì không thấy dư địa cho tương lai.",
 
-        "Chấp nhận được.",
+        "Chấp nhận được, nhưng sẽ không có nhiều khoảng trống để đầu tư cho mục tiêu lớn hơn.",
 
-        "Khá hài lòng.",
+        "Khá ổn, vẫn có thể duy trì cuộc sống và đầu tư cho một số mục tiêu quan trọng.",
 
-        "Hoàn toàn hài lòng."
+        "Tài chính hiện tại đã có hệ thống đủ tốt để tạo sự chủ động, tích lũy và lựa chọn cho tương lai."
 
     ]
 
@@ -606,21 +606,21 @@ const QUESTIONS = [
 
     category: "Tài chính",
 
-    question: "Điều mô tả đúng nhất tình hình tài chính hiện tại của bạn là:",
+    question: "Điều nào mô tả đúng nhất cách bạn đang vận hành tài chính cá nhân?",
 
     helper: "",
 
     answers: [
 
-        "Luôn căng thẳng vì tiền.",
+        "Khá phản ứng, thường xuyên căng thẳng hoặc tránh nhìn vào con số thật.",
 
-        "Đủ sống.",
+        "Đủ sống nhưng dễ bị động khi có phát sinh.",
 
-        "Có tích lũy nhỏ.",
+        "Có theo dõi cơ bản nhưng chưa đều hoặc chưa có chiến lược rõ.",
 
-        "Nền tảng khá ổn.",
+        "Có ngân sách, tích lũy và một phần đầu tư/dự phòng tương đối ổn.",
 
-        "Tiền không còn là mối bận tâm."
+        "Tài chính được thiết kế như một hệ thống hỗ trợ tự do, hiệu suất và lựa chọn sống dài hạn."
 
     ]
 
@@ -635,21 +635,21 @@ const QUESTIONS = [
 
     category: "Mối quan hệ",
 
-    question: "Mức độ hài lòng của bạn với các mối quan hệ quan trọng là:",
+    question: "Các mối quan hệ quan trọng hiện tại đang tác động thế nào đến năng lượng của bạn?",
 
     helper: "",
 
     answers: [
 
-        "Rất không hài lòng.",
+        "Thường gây căng thẳng, tổn thương hoặc cảm giác cô đơn.",
 
-        "Chưa hài lòng.",
+        "Có kết nối nhưng tôi vẫn cảm thấy thiếu được hiểu, thiếu hỗ trợ hoặc phải gồng nhiều.",
 
-        "Bình thường.",
+        "Tạm ổn, chủ yếu mang tính chức năng hơn là thật sự nuôi dưỡng.",
 
-        "Khá hài lòng.",
+        "Có một số mối quan hệ khiến tôi thấy được hỗ trợ, lắng nghe và có thêm năng lượng.",
 
-        "Rất hài lòng."
+        "Tôi có các mối quan hệ được nuôi dưỡng có chủ đích, có ranh giới lành mạnh và có sự phát triển hai chiều."
 
     ]
 
@@ -660,21 +660,21 @@ const QUESTIONS = [
 
     category: "Mối quan hệ",
 
-    question: "Sau khi gặp những người thân thiết, bạn thường cảm thấy:",
+    question: "Trong 1 tháng qua, sau khi tiếp xúc với những người bạn gặp hoặc nói chuyện thường xuyên nhất, bạn thường cảm thấy thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Kiệt sức.",
+        "Kiệt sức, căng thẳng hoặc cần thời gian hồi phục sau khi tương tác.",
 
-        "Mệt.",
+        "Vừa có kết nối vừa thấy mệt, vì phải nghe nhiều, chiều nhiều hoặc giữ nhiều cảm xúc.",
 
-        "Không khác biệt.",
+        "Không khác biệt nhiều; các tương tác chủ yếu mang tính trách nhiệm hoặc xã giao.",
 
-        "Được tiếp thêm năng lượng.",
+        "Thường thấy nhẹ hơn, được lắng nghe hoặc có thêm năng lượng để tiếp tục ngày của mình.",
 
-        "Tràn đầy năng lượng."
+        "Cảm thấy được nuôi dưỡng, rõ ràng và vững hơn; các mối quan hệ thường xuyên giúp tôi sống và làm việc tốt hơn."
 
     ]
 
@@ -685,21 +685,21 @@ const QUESTIONS = [
 
     category: "Mối quan hệ",
 
-    question: "Nếu gặp một biến cố lớn trong cuộc sống, bạn sẽ có:",
+    question: "Trong các mối quan hệ thường xuyên, bạn đang giữ ranh giới cá nhân như thế nào?",
 
     helper: "",
 
     answers: [
 
-        "Chỉ có thể tự xoay xở.",
+        "Tôi thường ôm nhiều việc/cảm xúc của người khác và dễ kiệt sức vì không biết dừng ở đâu.",
 
-        "Một người sẵn sàng giúp đỡ.",
+        "Tôi hay nhận lời, chiều lòng hoặc tránh làm người khác thất vọng, dù sau đó thấy mệt.",
 
-        "Vài người sẵn sàng giúp đỡ.",
+        "Tôi có ý thức về ranh giới nhưng duy trì chưa đều; nhiều lúc vẫn bị kéo theo kỳ vọng của người khác.",
 
-        "Một mạng lưới hỗ trợ tốt.",
+        "Tôi biết nói rõ nhu cầu, giới hạn và điều mình có thể/không thể làm trong phần lớn tình huống.",
 
-        "Rất nhiều người luôn đồng hành."
+        "Tôi có các ranh giới lành mạnh và cách tương tác rõ ràng, giúp các mối quan hệ quan trọng trở thành nguồn hỗ trợ thay vì nguồn rò rỉ năng lượng."
 
     ]
 
@@ -720,15 +720,15 @@ const QUESTIONS = [
 
     answers: [
 
-        "Rất không hài lòng.",
+        "Tôi lo lắng hoặc né tránh nhìn thẳng vào tình trạng sức khỏe của mình.",
 
-        "Không hài lòng.",
+        "Tôi biết có vấn đề cần cải thiện nhưng chưa biết bắt đầu từ đâu hoặc chưa duy trì được.",
 
-        "Tạm ổn.",
+        "Tạm ổn, nhưng thói quen sức khỏe còn khá thất thường.",
 
-        "Khá hài lòng.",
+        "Đang cải thiện, đã có một số thói quen nền tảng giúp tôi khỏe hơn.",
 
-        "Rất hài lòng."
+        "Tôi xem sức khỏe là nền tảng hiệu suất và chủ động theo dõi, điều chỉnh trước khi cơ thể xuống cấp."
 
     ]
 
@@ -739,21 +739,21 @@ const QUESTIONS = [
 
     category: "Sức khỏe & Cuộc sống",
 
-    question: "Nếu duy trì lối sống hiện tại thêm 5 năm, bạn nghĩ sức khỏe của mình sẽ:",
+    question: "Nếu duy trì lối sống hiện tại thêm 5 năm, bạn nghĩ mình sẽ ra sao?",
 
     helper: "",
 
     answers: [
 
-        "Tệ hơn rất nhiều.",
+        "Có nguy cơ xuống sức rõ rệt hoặc kiệt quệ hơn hiện tại.",
 
-        "Xấu hơn.",
+        "Có thể tệ hơn, dù chưa đến mức báo động ngay.",
 
-        "Không thay đổi.",
+        "Có lẽ không thay đổi nhiều: vẫn vận hành được nhưng chưa thật sự khỏe và tốt hơn.",
 
-        "Khỏe hơn một chút.",
+        "Có thể khỏe hơn một chút vì tôi đã bắt đầu có vài thói quen tốt.",
 
-        "Khỏe hơn rất nhiều."
+        "Có khả năng khỏe hơn rõ rệt vì những thói quen hiện tại đang có tính tích lũy tích cực."
 
     ]
 
@@ -764,21 +764,21 @@ const QUESTIONS = [
 
     category: "Sức khỏe & Cuộc sống",
 
-    question: "Nếu nhìn lại cuộc sống hiện tại, bạn cảm thấy:",
+    question: "Nếu nhìn lại cuộc sống hiện tại, câu nào mô tả đúng nhất với bạn?",
 
     helper: "",
 
     answers: [
 
-        "Đây không phải cuộc sống mình mong muốn.",
+        "Đây không phải cuộc sống tôi mong muốn và tôi cảm thấy khá mắc kẹt.",
 
-        "Mình vẫn đang loay hoay tìm hướng đi.",
+        "Tôi đang loay hoay, biết mình cần thay đổi nhưng chưa rõ bắt đầu từ đâu.",
 
-        "Có nhiều điều ổn nhưng vẫn còn thiếu một điều gì đó.",
+        "Có nhiều thứ ổn, nhưng vẫn thiếu sự ăn khớp giữa công việc, năng lượng, sức khỏe và ý nghĩa sống.",
 
-        "Mình đang đi đúng hướng.",
+        "Tôi đang đi đúng hướng, dù vẫn còn nhiều điểm cần tối ưu.",
 
-        "Mình thật sự yêu cuộc sống mình đang xây dựng."
+        "Tôi đang chủ động xây dựng một cuộc sống mà kết quả, năng lượng và chất lượng sống hỗ trợ lẫn nhau."
 
     ]
 
