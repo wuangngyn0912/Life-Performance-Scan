@@ -441,47 +441,31 @@ function getPerformanceLevel(score){
    STRONGEST / WEAKEST
 ===================================================== */
 
-function findBestCategory(categories){
+function findBestCategories(categories){
 
-    let best=null;
+    const entries=Object.entries(categories);
 
-    let value=-1;
+    const maxValue=Math.max(...entries.map(([,val])=>val));
 
-    Object.entries(categories).forEach(([key,val])=>{
+    return entries
 
-        if(val>value){
+        .filter(([,val])=>val>=maxValue-5)
 
-            value=val;
-
-            best=key;
-
-        }
-
-    });
-
-    return best;
+        .map(([key])=>key);
 
 }
 
-function findWorstCategory(categories){
+function findWorstCategories(categories){
 
-    let worst=null;
+    const entries=Object.entries(categories);
 
-    let value=999;
+    const minValue=Math.min(...entries.map(([,val])=>val));
 
-    Object.entries(categories).forEach(([key,val])=>{
+    return entries
 
-        if(val<value){
+        .filter(([,val])=>val<=minValue+5)
 
-            value=val;
-
-            worst=key;
-
-        }
-
-    });
-
-    return worst;
+        .map(([key])=>key);
 
 }
 
@@ -545,14 +529,6 @@ function displayResults(
 
         overall+"%";
 
-    document.getElementById(
-
-        "performanceDescription"
-
-    ).textContent=
-
-        performance.description;
-
     document.getElementById("scoreInsightText").textContent=
 
         performance.description;
@@ -563,7 +539,7 @@ function displayResults(
 
     document.getElementById("scoreInsightStage").textContent=
 
-        performance.title.replace(/[^A-Za-zÀ-ÿ ]/g, "").trim();
+        performance.title.replace(/^[^\p{L}]+/u, "").trim();
 
     renderStageExplanation(performance);
 
@@ -823,13 +799,13 @@ function buildCategoryScores(scores){
 
 function buildInsights(scores){
 
-    const best=
+    const bestCategories=
 
-        findBestCategory(scores);
+        findBestCategories(scores);
 
-    const worst=
+    const worstCategories=
 
-        findWorstCategory(scores);
+        findWorstCategories(scores);
 
     const strength=
 
@@ -861,65 +837,77 @@ function buildInsights(scores){
 
     recommendation.innerHTML="";
 
-    const bestData=
-
-        RECOMMENDATIONS[best][
-
-            recommendationLevel(
-
-                scores[best]
-
-            )
-
-        ];
-
-    const worstData=
-
-        RECOMMENDATIONS[worst][
-
-            recommendationLevel(
-
-                scores[worst]
-
-            )
-
-        ];
-
     strength.innerHTML=
 
-    `
+        bestCategories.map(cat=>{
 
-    <div class="insightCard">
+            const data=
 
-        <h3>${best}</h3>
+                RECOMMENDATIONS[cat][
 
-        <p>${bestData.title}</p>
+                    recommendationLevel(scores[cat])
 
-    </div>
+                ];
 
-    `;
+            return `
+
+            <div class="insightCard">
+
+                <h3>${cat}</h3>
+
+                <p>${data.title}</p>
+
+            </div>
+
+            `;
+
+        }).join("");
 
     weakness.innerHTML=
 
-    `
+        worstCategories.map(cat=>{
 
-    <div class="insightCard">
+            const data=
 
-        <h3>${worst}</h3>
+                RECOMMENDATIONS[cat][
 
-        <p>${worstData.title}</p>
+                    recommendationLevel(scores[cat])
 
-    </div>
+                ];
 
-    `;
+            return `
 
-    worstData.recommendations.forEach(item=>{
+            <div class="insightCard">
 
-        const li=document.createElement("li");
+                <h3>${cat}</h3>
 
-        li.textContent=item;
+                <p>${data.title}</p>
 
-        recommendation.appendChild(li);
+            </div>
+
+            `;
+
+        }).join("");
+
+    worstCategories.forEach(cat=>{
+
+        const data=
+
+            RECOMMENDATIONS[cat][
+
+                recommendationLevel(scores[cat])
+
+            ];
+
+        data.recommendations.forEach(item=>{
+
+            const li=document.createElement("li");
+
+            li.textContent=item;
+
+            recommendation.appendChild(li);
+
+        });
 
     });
 
