@@ -573,6 +573,50 @@ function displayResults(
 
     buildInsights(categoryScores);
 
+    window.chatbotContext = buildChatbotContext(
+
+        overall,
+
+        totalScore,
+
+        performance,
+
+        categoryScores
+
+    );
+
+}
+
+function buildChatbotContext(overall, totalScore, performance, categoryScores){
+
+    const answeredQuestions = QUESTIONS.map((q, index) => {
+
+        const answerIndex = userAnswers[index];
+
+        const answerText = answerIndex !== undefined
+
+            ? q.answers[answerIndex]
+
+            : "Chưa trả lời";
+
+        return `- [${q.category}] ${q.question} => "${answerText}"`;
+
+    }).join("\n");
+
+    const categorySummary = Object.entries(categoryScores)
+
+        .map(([category, val]) => `${category}: ${val}%`)
+
+        .join(", ");
+
+    return `Thông tin bài đánh giá Life Performance Scan của người dùng đang chat:
+- Điểm tổng: ${overall}% (${totalScore}/150)
+- Giai đoạn hiện tại: ${performance.title}
+- Điểm theo từng lĩnh vực: ${categorySummary}
+
+Chi tiết từng câu hỏi và câu trả lời của người dùng:
+${answeredQuestions}`;
+
 }
 
 /* =====================================================
