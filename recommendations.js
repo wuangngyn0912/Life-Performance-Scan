@@ -8,7 +8,9 @@ const PERFORMANCE_LEVELS = [
     min:85,
     max:100,
 
-    title:"🌟 THRIVING",
+    key:"thriving",
+
+    title:"🌟 Thriving – HIỆU SUẤT CAO BỀN VỮNG",
 
     color:"#22c55e",
 
@@ -21,7 +23,9 @@ const PERFORMANCE_LEVELS = [
     min:70,
     max:84,
 
-    title:"🚀 PERFORMING",
+    key:"performing",
+
+    title:"🚀 Performing – HIỆU QUẢ",
 
     color:"#3b82f6",
 
@@ -34,7 +38,9 @@ const PERFORMANCE_LEVELS = [
     min:55,
     max:69,
 
-    title:"📈 EMERGING",
+    key:"emerging",
+
+    title:"📈 Emerging – MỞ KHÓA HIỆU SUẤT",
 
     color:"#f59e0b",
 
@@ -47,7 +53,9 @@ const PERFORMANCE_LEVELS = [
     min:40,
     max:54,
 
-    title:"⚠️ DRAINING",
+    key:"draining",
+
+    title:"⚠️ Draining – HAO MÒN",
 
     color:"#f97316",
 
@@ -60,7 +68,9 @@ const PERFORMANCE_LEVELS = [
     min:0,
     max:39,
 
-    title:"🔴 SURVIVAL",
+    key:"survival",
+
+    title:"🔴 Survival – SINH TỒN",
 
     color:"#ef4444",
 
