@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { messages, apiKey } = req.body || {};
+  const { messages, apiKey, context } = req.body || {};
   const openAIKey = (apiKey || process.env.OPENAI_API_KEY || '').trim();
 
   if (!messages || !Array.isArray(messages)) {
@@ -16,6 +16,9 @@ export default async function handler(req, res) {
   if (!openAIKey) {
     return res.status(401).json({ error: 'OpenAI API key is missing. Paste it in the chat widget or set OPENAI_API_KEY on the server.' });
   }
+
+  const systemPrompt = 'You are a helpful assistant for the Life Performance Scan website. Keep answers short and friendly.'
+    + (context ? `\n\nHere is the user's own assessment data — use it to personalize your answers instead of asking them to repeat it:\n${context}` : '');
 
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -29,7 +32,7 @@ export default async function handler(req, res) {
         messages: [
           {
             role: 'system',
-            content: 'You are a helpful assistant for the Life Performance Scan website. Keep answers short and friendly.'
+            content: systemPrompt
           },
           ...messages
         ],
