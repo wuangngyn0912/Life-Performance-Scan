@@ -447,11 +447,23 @@ function findBestCategories(categories){
 
     const maxValue=Math.max(...entries.map(([,val])=>val));
 
-    return entries
+    const bestKey=entries.find(([,val])=>val===maxValue)[0];
 
-        .filter(([,val])=>val>=maxValue-5)
+    const tiedHighPerformers=entries
+
+        .filter(([key,val])=>
+
+            key!==bestKey &&
+
+            val>=maxValue-5 &&
+
+            val>75
+
+        )
 
         .map(([key])=>key);
+
+    return [bestKey, ...tiedHighPerformers];
 
 }
 
@@ -461,11 +473,23 @@ function findWorstCategories(categories){
 
     const minValue=Math.min(...entries.map(([,val])=>val));
 
-    return entries
+    const worstKey=entries.find(([,val])=>val===minValue)[0];
 
-        .filter(([,val])=>val<=minValue+5)
+    const tiedLowPerformers=entries
+
+        .filter(([key,val])=>
+
+            key!==worstKey &&
+
+            val<=minValue+5 &&
+
+            val<25
+
+        )
 
         .map(([key])=>key);
+
+    return [worstKey, ...tiedLowPerformers];
 
 }
 
