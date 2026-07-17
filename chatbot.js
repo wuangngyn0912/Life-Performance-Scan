@@ -1,83 +1,54 @@
-(function () {
-  const messages = [];
+// This runs on the SERVER (Vercel serverless function), never in the browser.
+// The API key lives here, as an environment variable — never in your HTML/JS.
 
-  const bubble = document.createElement('button');
-  bubble.id = 'chatbotBubble';
-  bubble.innerHTML = '💬';
-  document.body.appendChild(bubble);
-
-  const panel = document.createElement('div');
-  panel.id = 'chatbotPanel';
-  panel.innerHTML = `
-    <div id="chatbotHeader">
-      <span>Chat with us</span>
-      <button id="chatbotClose">✕</button>
-    </div>
-    <div id="chatbotMessages"></div>
-    <div id="chatbotInputRow">
-      <input id="chatbotInput" type="text" placeholder="Type a message..." />
-      <button id="chatbotSend">Send</button>
-    </div>
-  `;
-  document.body.appendChild(panel);
-
-  const messagesEl = panel.querySelector('#chatbotMessages');
-  const inputEl = panel.querySelector('#chatbotInput');
-  const sendBtn = panel.querySelector('#chatbotSend');
-  const closeBtn = panel.querySelector('#chatbotClose');
-
-  function addMessage(role, text) {
-    const div = document.createElement('div');
-    div.className = 'chatbotMsg ' + (role === 'user' ? 'chatbotMsgUser' : 'chatbotMsgBot');
-    div.textContent = text;
-    messagesEl.appendChild(div);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  async function sendMessage() {
-    const text = inputEl.value.trim();
-    if (!text) return;
+  const { messages, apiKey } = req.body || {};
+  const openAIKey = (apiKey || process.env.OPENAI_API_KEY || '').trim();
 
-    addMessage('user', text);
-    messages.push({ role: 'user', content: text });
-    inputEl.value = '';
-    sendBtn.disabled = true;
+  if (!messages || !Array.isArray(messages)) {
+    return res.status(400).json({ error: 'messages array is required' });
+  }
 
-    const typingEl = document.createElement('div');
-    typingEl.className = 'chatbotMsg chatbotMsgBot';
-    typingEl.textContent = '...';
-    messagesEl.appendChild(typingEl);
-    messagesEl.scrollTop = messagesEl.scrollHeight;
+  if (!openAIKey) {
+    return res.status(401).json({ error: 'OpenAI API key is missing. Paste it in the chat widget or set OPENAI_API_KEY on the server.' });
+  }
 
-    try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages, context: window.chatbotContext || '' })
-      });
-      const data = await res.json();
-      typingEl.remove();
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${openAIKey}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are a helpful assistant for the Life Performance Scan website. Keep answers short and friendly.'
+          },
+          ...messages
+        ],
+        max_tokens: 500
+      })
+    });
 
-      const reply = data.reply || data.error || 'Sorry, something went wrong.';
-      addMessage('bot', reply);
-      messages.push({ role: 'assistant', content: reply });
-    } catch (err) {
-      typingEl.remove();
-      addMessage('bot', 'Sorry, I could not connect right now.');
-    } finally {
-      sendBtn.disabled = false;
+    const data = await response.json();
+
+    if (!response.ok) {
+      console.error('OpenAI error:', data);
+      return res.status(response.status).json({ error: data.error?.message || 'OpenAI request failed' });
     }
+
+    const reply = data.choices?.[0]?.message?.content || 'Sorry, I had trouble responding.';
+    return res.status(200).json({ reply });
+
+  } catch (err) {
+    console.error('Server error:', err);
+    return res.status(500).json({ error: 'Something went wrong' });
   }
-
-  addMessage('bot', 'Hi! The chat bot is ready to help.');
-
-  bubble.addEventListener('click', () => {
-    panel.classList.toggle('chatbotOpen');
-    if (panel.classList.contains('chatbotOpen')) inputEl.focus();
-  });
-  closeBtn.addEventListener('click', () => panel.classList.remove('chatbotOpen'));
-  sendBtn.addEventListener('click', sendMessage);
-  inputEl.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') sendMessage();
-  });
-})();
+}
