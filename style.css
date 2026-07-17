@@ -526,6 +526,62 @@ body{
 
 }
 
+.scoreQuestionBox{
+
+    margin:20px 0;
+
+    padding:22px 26px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.2),
+        rgba(56,189,248,.08)
+    );
+
+    border:1px solid rgba(96,165,250,.35);
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    line-height:1.7;
+
+    text-align:center;
+
+}
+
+.reasonList{
+
+    list-style:none;
+
+    padding-left:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin:20px 0;
+
+}
+
+.reasonList li{
+
+    padding:16px 20px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border-left:4px solid #38bdf8;
+
+    line-height:1.7;
+
+}
+
 .ctaCard p{
 
     margin-bottom:18px;
