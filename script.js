@@ -16,6 +16,7 @@ let totalQuestions = QUESTIONS.length;
 
 const pages = document.querySelectorAll(".page");
 
+const splashPage = document.getElementById("splashPage");
 const landingPage = document.getElementById("landingPage");
 const basicInfoPage = document.getElementById("basicInfoPage");
 const questionPage = document.getElementById("questionPage");
@@ -42,6 +43,12 @@ const startButton = document.getElementById("startAssessment");
 window.addEventListener("DOMContentLoaded", () => {
 
     bindEvents();
+
+    setTimeout(()=>{
+
+        showPage(landingPage);
+
+    }, 1800);
 
 });
 
@@ -209,6 +216,8 @@ function renderQuestion(){
 
         card.className="answerCard";
 
+        card.style.animationDelay=(index*0.05)+"s";
+
         if(userAnswers[currentQuestionIndex]===index){
 
             card.classList.add("selected");
@@ -250,6 +259,18 @@ function renderQuestion(){
 
         : "Tiếp tục";
 
+    const questionContentEl=document.getElementById("questionContent");
+
+    [questionContentEl, answerContainer].forEach(el=>{
+
+        el.classList.remove("questionAnim");
+
+        void el.offsetWidth;
+
+        el.classList.add("questionAnim");
+
+    });
+
 }
 
 /* =====================================================
@@ -260,7 +281,25 @@ function selectAnswer(index){
 
     userAnswers[currentQuestionIndex]=index;
 
-    renderQuestion();
+    const cards=answerContainer.querySelectorAll(".answerCard");
+
+    cards.forEach((card,i)=>{
+
+        card.classList.remove("justSelected");
+
+        card.classList.toggle("selected", i===index);
+
+    });
+
+    const selectedCard=cards[index];
+
+    if(selectedCard){
+
+        void selectedCard.offsetWidth;
+
+        selectedCard.classList.add("justSelected");
+
+    }
 
 }
 /* =====================================================
@@ -510,6 +549,42 @@ function recommendationLevel(score){
 }
 
 /* =====================================================
+   COUNT-UP ANIMATION
+===================================================== */
+
+function animateCountUp(el, endValue, duration){
+
+    const startTime=window.performance.now();
+
+    function tick(now){
+
+        const elapsed=now-startTime;
+
+        const progress=Math.min(elapsed/duration, 1);
+
+        const eased=1-Math.pow(1-progress, 3);
+
+        const current=Math.round(endValue*eased);
+
+        el.textContent=current+"%";
+
+        if(progress<1){
+
+            requestAnimationFrame(tick);
+
+        } else {
+
+            el.textContent=endValue+"%";
+
+        }
+
+    }
+
+    requestAnimationFrame(tick);
+
+}
+
+/* =====================================================
    DISPLAY RESULTS
 ===================================================== */
 
@@ -545,11 +620,21 @@ function displayResults(
 
         totalScore+" / 150";
 
+    animateCountUp(
+
+        document.getElementById("finalPercentage"),
+
+        overall,
+
+        1400
+
+    );
+
     document.getElementById(
 
-        "finalPercentage"
+        "scoreWaterLevel"
 
-    ).textContent=
+    ).style.height=
 
         overall+"%";
 
@@ -557,9 +642,15 @@ function displayResults(
 
         performance.description;
 
-    document.getElementById("scoreInsightScore").textContent=
+    animateCountUp(
 
-        overall+"%";
+        document.getElementById("scoreInsightScore"),
+
+        overall,
+
+        1400
+
+    );
 
     document.getElementById("scoreInsightStage").textContent=
 
@@ -674,6 +765,14 @@ options:{
             responsive:true,
 
             maintainAspectRatio:false, // Tắt tỉ lệ mặc định để ưu tiên chiều cao CSS đã cài ở Bước 1
+
+            animation:{
+
+                duration:1400,
+
+                easing:"easeOutQuart"
+
+            },
 
             layout: {
                 padding: {
@@ -792,6 +891,11 @@ function renderStageExplanation(performance){
             title: "Nếu bạn đang ở vùng Thriving",
             body: [
                 "Chúc mừng bạn, bạn đang nằm trong danh sách những người xuất sắc với tảng hiệu suất sống cao. Bạn có khả năng tạo kết quả, giữ năng lượng và duy trì chất lượng sống ở mức cao hơn mặt bằng chung. Đây là một lợi thế rất lớn khiến bạn đạt được nhiều kết quả trong cuộc sống, tiến gần với mục đích cuộc đời mà vẫn cảm thấy tích cực, cân bằng.",
+                "Câu hỏi tiếp theo là:",
+                "Làm sao để duy trì phong độ này bền vững hơn?",
+                "Làm sao để nhân rộng tác động mà không bị quá tải?",
+                "Làm sao để dùng năng lượng của mình vào đúng việc có đòn bẩy nhất?",
+                "Ở giai đoạn này, tiềm năng nằm ở sự tinh chỉnh: tăng sự tập trung, mở rộng quy mô, tăng đòn bẩy, bảo vệ nhịp phục hồi và thiết kế cuộc sống phù hợp để tiến gần hơn với phiên bản bạn muốn trở thành."
             ]
         }
 
@@ -847,7 +951,7 @@ function buildCategoryScores(scores){
 
             class="categoryFill"
 
-            style="width:${value}%">
+            style="width:0%">
 
             </div>
 
@@ -856,6 +960,18 @@ function buildCategoryScores(scores){
         `;
 
         container.appendChild(row);
+
+        const fillEl=row.querySelector(".categoryFill");
+
+        requestAnimationFrame(()=>{
+
+            requestAnimationFrame(()=>{
+
+                fillEl.style.width=value+"%";
+
+            });
+
+        });
 
     });
 
